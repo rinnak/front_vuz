@@ -245,6 +245,58 @@ a {
   cursor: pointer;
   flex: 1 1 calc(33.333% - 15px);
   box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  isolation: isolate;
+}
+
+.gallery-item::before{
+  content: "";
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(45deg, rgba(145, 135, 210, 0.118) 0%, rgba(126, 94, 242, 0.2) 100%);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.gallery-content{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top, 
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 50%, 
+    transparent 100% /* Полная прозрачность сверху */);
+    color: white;
+    transform:translateY(100%);
+    z-index: 3;
+    transition: all 0.5s ease;
+}
+
+.gallery-content h3{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4em;
+  margin: 0px 15px;
+  color: white;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.1s;
+  opacity: 0;
+
+}
+.gallery-content p{
+ font-size: 0.95em;
+ margin: 5px 15px 15px;
+ opacity: 0;
+ transform: translateY(20px);
+ transition: all 0.4s ease 0.2s;
 }
 
 .gallery-item img {
@@ -255,12 +307,27 @@ a {
   object-fit: cover;
   display: block;
   line-height: 0;
-  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.gallery-item:hover .gallery-content {
+  transform: translateY(0); /* Возвращаем на место (показываем) */
+}
+.gallery-item:hover .gallery-content h3,
+.gallery-item:hover .gallery-content p{
+  opacity: 1;       
+  transform: translateY(0); 
+}
+.gallery-item:hover::before{
+  opacity: 1;
+    background: linear-gradient(
+    45deg, 
+    rgba(145, 135, 210, 0.3) 0%, 
+    rgba(126, 94, 242, 0.4) 100%
+  );
 }
 
 .footer {
@@ -504,7 +571,6 @@ img {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  isolation: isolate;
 }
 #btn4 span{
   position:relative;
@@ -883,6 +949,17 @@ img {
   .scroll-to-top {
     display: none;
   }
+  .notifications{
+    left: 20px;
+  }
+  .gallery-content p{
+    margin:0;
+    padding: 15px 0px 15px 15px;
+    font-size: 10px;
+  }
+  .gallery-content h3{
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -949,5 +1026,13 @@ img {
   .philosophy dl {
     flex: 1; /* занимает оставшееся пространство */
     margin: 0;
+  }
+  .gallery-content p{
+    margin:0;
+    padding: 15px 0px 15px 15px;
+    font-size: 14px;
+  }
+  .gallery-content h3{
+    font-size: 18px;
   }
 }
