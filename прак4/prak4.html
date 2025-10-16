@@ -1,0 +1,83 @@
+<html lang = "ru">
+    <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--контроль масштаба отобр на устр -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+         <link rel = "stylesheet" href="prak4.css">
+    </head>
+    <body>
+
+        <form id="form1" method = "get">
+            <fieldset>
+                <legend>Информация о пользователе</legend>
+                <label for="name" class="required">Имя пользователя<span class="required-star">*</span></label>
+                <input type="text" id="name" name="student_name" placeholder="Иванов Иван Иванович" required>
+                <label for="tel" class="required">Номер телефона<span class="required-star">*</span></label>
+                <input type="tel" id="tel" name="student_tel" pattern="[0-9]{10}" placeholder="+79000000000"required>
+                <label for="mail" class="required">Почта<span class="required-star">*</span></label>
+                <input type="email" id="mail" name="student_email" placeholder="vasya_pupkin@mail.ru" required>
+                <label for="password" class="required">Пароль<span class="required-star">*</span></label>
+                <input type="password" id="password" name="student_password" minlength="6"required>
+                <label for="bio" class="required">Информация<span class="required-star">*</span></label>
+                <textarea id="bio" name="student_bio" placeholder="Напишите о себе" rows="5" cols="40" maxlength="500" minlength="10" required></textarea>
+            </fieldset>
+        </form>
+        <form id="form2" method="get">
+            <fieldset> <!--контейнер группы -->
+                <legend>Доп. информация</legend>
+                <label for="avatar">Выберите фото профиля</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*">
+
+                <div class="radio-group">
+                    <label class="required">Пол<span class="required-star">*</span></label><br>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Мужской</label>
+                    <input type="radio" id="female" name="gender" value="male" required>
+                    <label for="female">Женский</label>
+                </div>
+
+                <label for="birthdate" class="required">Дата рождения<span class="required-star">*</span></label>
+                <input type="date" id = "birthdate" name = "birthdate" min="1900-01-01" max="2024-12-31">
+            </fieldset>
+            <input type="submit" value="Зарегистрироваться" name="submit_input">
+        </form>
+        <form id="form3" method="get">
+            <fieldset>
+                <label for="country" class="reauired">Страна<span class="required-star">*</span></label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Выберите страну</option>
+                    <option value="ru"> Россия </option>
+                    <option value="us"> США </option>
+                    <option value="de"> Германия </option>
+                    <option value="fr"> Франция </option>
+                </select>
+
+                <label id="interests" name="interests">Выберите Интересы</label>
+                    <select id="interests" name="interests" multiple size="4">
+                        <option value="sports">Спорт</option>
+                        <option value="music">Музыка</option>
+                        <option value="books">Книги</option>
+                        <option value="travel">Путешествия</option>
+                        <option value="tech">Технологии</option>
+                    </select>
+            </fieldset>
+            <button type="submit" name="submit">Отправить форму</button>
+        </form>
+        <form id="form4" method="get">
+            <div class="checkbox-group">
+            <input type="checkbox" id="newsletter" name="newsletter" checked>
+            <label for="newsletter">Подписаться на рассылку</label>
+            </div>
+        </form>
+        <div class="obj">
+            <div class ="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14702.41293815704!2d37.76054471261975!3d55.67911958524491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414ab447e6002485%3A0x792e1e9f5ce2e1eb!2z0JvRjtCx0LvQuNC90L4!5e0!3m2!1sru!2sru!4v1758989858968!5m2!1sru!2sru" width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class = "video">
+                <iframe width="622" height="350" src="https://rutube.ru/play/embed/c8e1d6a629a3fd0050429f685f913f0b/" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+        </div>
+    </body>
+</html>
