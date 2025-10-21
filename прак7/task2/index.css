@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(255, 226, 255);
+}
+
+.social{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    box-shadow: 4px 8px 5px #18181826;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon i{
+    font-size:  26px;
+    color: #181818;
+    transition: all 0.3s ease;
+    z-index:1;
+}
+
+.icon:after{
+    content: "";
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    transform: translateY(70px);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.icon.vk:after{
+    background: linear-gradient(25deg, #b929b0, #7f29b9);
+}
+
+.icon.tg:after{
+    background: linear-gradient(25deg, #1aa3c1, #42c351);;
+}
+
+.icon.git:after{
+    background: linear-gradient(25deg, #c11a1a, #ca6f20);;
+}
+
+.icon:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 0px 15px #18181826;
+}
+
+.icon:hover i{
+    color: white;
+}
+
+.icon:hover::after{
+    transform: translateY(0);
+}
