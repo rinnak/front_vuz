@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    background-color: #362636;
+    min-height: 100vh;
+}
+
+.container{
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #320d59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50%;
+}
+.content{
+    padding: 30px;
+    text-align: center;
+}
+
+h2{
+    position: absolute;
+    right: 30px;
+    font-size: 70px;
+    color: rgb(71, 124, 190);
+    opacity: 0.1;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.card:hover h2{
+    opacity: 1;
+    transform: translateY(-90px);
+}
+
+h3{
+    position: relative;
+    color: white;
+    opacity: 0.5;
+    font-size: 24px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover h3, 
+.card:hover p{
+    opacity: 1;
+}
+
+p{
+    position: relative;
+    color: white;
+    opacity: 0.5;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #181818;
+    opacity: 1;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.container .card span{
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.container .card:hover span{
+    opacity: 1;
+}
+.container .card span:nth-child(1){
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #dd06fa);
+    animation: animate1 2s linear infinite;
+    animation-delay: -1s;
+}
+
+@keyframes animate1{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+@keyframes animate2{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+
+.container .card span:nth-child(2){
+    position: absolute;
+    top:0;
+    right:0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #dd06fa);
+    animation: animate2 2s linear infinite;
+}
+@keyframes animate3{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.container .card span:nth-child(3){
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, transparent, #dd06fa);
+    animation: animate3 2s linear infinite;
+    animation-delay: -1s;
+}
+
+@keyframes animate4{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+.container .card span:nth-child(4){
+    position: absolute;
+    bottom:0;
+    left:0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to top, transparent, #dd06fa);
+    animation: animate4 2s linear infinite;
+}
+
+.container:hover .card{
+    opacity: 0.5;
+}
+
+.container .card:hover{
+    opacity: 1;
+}
