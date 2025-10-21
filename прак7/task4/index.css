@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgb(192, 121, 212), rgb(129, 101, 221));
+}
+
+.container{
+    position: relative;
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 420px;
+    background: #eeeeee;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .3);
+    transition: 0.3s;
+}
+
+.container .card .circle{
+    position: relative;
+    background: aquamarine;
+    width:100%;
+    height: 100%;
+    clip-path: circle(180px at center 0); /*круговая область отсечения элемента*/
+    text-align: center;
+}
+
+.container .card .circle h2{
+    color: white;
+    font-size: 48px;
+    padding: 65px 0;
+}
+
+.container .card .content{
+    position: absolute;
+    bottom: 15px;
+    padding: 20px;
+    page-break-after: 20px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(212, 41, 41);
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    display: inline-block; /*чтобы не налкдаывались элементы друг на друга*/
+}
+
+.container .card:nth-child(1) .circle,
+.container .card:nth-child(1) .content a{
+    background: #e2bc16;
+}
+
+.container .card:nth-child(2) .circle,
+.container .card:nth-child(2) .content a{
+    background: #e216b2;
+}
+
+.container .card:nth-child(3) .circle,
+.container .card:nth-child(3) .content a{
+    background: #16e21d;
+}
+
+.container:hover .card{
+    filter: blur(20px);
+    transform: scale(0.8);
+    oPACITY: 0.5;
+}
+
+.container .card:hover{
+    filter: none;
+    opacity: 1;
+    transform: translateY(-5px);
+    transform: scale(1.05);
+}
