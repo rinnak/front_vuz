@@ -60,7 +60,7 @@ h2{
 
 .card:hover h2{
     opacity: 1;
-    transform: translateY(-90px);
+    transform: translateY(-70px);
 }
 
 h3{
